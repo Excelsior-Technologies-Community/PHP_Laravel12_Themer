@@ -493,3 +493,7 @@ PHP_Laravel12_Themer/
 ---
 
 Your PHP_Laravel12_Themer Project is now ready!
+<<<<<<< HEAD
+=======
+
+>>>>>>> development
