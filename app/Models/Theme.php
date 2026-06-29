@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Theme extends Model
 {
@@ -18,6 +19,10 @@ class Theme extends Model
 
     public function isActive(): bool
     {
+        if (Auth::check() && Auth::user()->theme_id) {
+            return Auth::user()->theme_id === $this->id;
+        }
+
         return session('theme') === $this->slug;
     }
 }
